@@ -1,0 +1,27 @@
+<!-- app/templates/upload.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Create a new video</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="title">Title / 标题：</label><br>
+        <input type="text" id="title" name="title" required style="width: 300px;">
+    </div>
+
+    <div style="margin-top: 12px;">
+        <label for="text_content">Text content / 祝福文字：</label><br>
+        <textarea id="text_content" name="text_content" rows="5" cols="60" required></textarea>
+    </div>
+
+    <div style="margin-top: 12px;">
+        <label for="files">Images / 图片（可多选）：</label><br>
+        <input type="file" id="files" name="files" accept="image/*" multiple required>
+    </div>
+
+    <div style="margin-top: 16px;">
+        <button type="submit">Upload &amp; Create Job</button>
+    </div>
+</form>
+{% endblock %}
